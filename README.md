@@ -2,7 +2,7 @@
 
 **[Open the illustrated research report](https://prabhav-patel.github.io/Quant-Research-Lab/)**
 
-Seven reproducible Python studies and a separate [market-microstructure system](https://github.com/Prabhav-patel/HFT-Microstructure-Lab) document the projects on my résumé. Start with the **[single illustrated report](report.html)** for the question, method, result and limitation of each study. The code and generated figures remain in their numbered folders; no raw market-data dumps or personal files are published.
+Seven reproducible Python studies and a separate [market-microstructure system](https://github.com/Prabhav-patel/HFT-Microstructure-Lab) document the projects on my résumé. Start with the **[single illustrated report](https://prabhav-patel.github.io/Quant-Research-Lab/)** for the question, method, result and limitation of each study. The code and generated figures remain in their numbered folders; no raw market-data dumps or personal files are published.
 
 The résumé dates refer to when I first completed the underlying studies (including earlier Excel/notebook work). These Python implementations and the public presentation were refreshed in **October 2026**; the publication date is not the original study date. Earlier public notebooks remain available in [Black-Scholes](https://github.com/Prabhav-patel/Black-Scholes-Model), [binomial trees](https://github.com/Prabhav-patel/Binomial-Tree-Model), [Monte Carlo](https://github.com/Prabhav-patel/Monte-Carlo-Simulation), and [portfolio risk](https://github.com/Prabhav-patel/Portfolio-Optimization-Risk-Analysis).
 
@@ -21,7 +21,7 @@ The résumé dates refer to when I first completed the underlying studies (inclu
 
 Install Python 3.11+ and `pip install -r requirements.txt`. From a numbered folder, run `python main.py`. Each script fetches adjusted public prices, writes local `data/` CSV files, plots under `outputs/`, and a detailed local `report.html`. The scripts were last exercised on **6 October 2026** with the package versions in `requirements.txt`. Quotes and model results will change on a later run; a failed or empty download must not be treated as evidence.
 
-The root `report.html` is the **only report HTML committed**. Its figures are frozen outputs from the stated refresh and are not a live dashboard. Data downloads use yfinance/Yahoo for personal research; raw quote files are intentionally not redistributed. The HFT repository likewise excludes raw tick captures. No strategy here is presented as live-trading performance or investment advice.
+The root `index.html` is the **only report HTML committed**. Its figures are frozen outputs from the stated refresh and are not a live dashboard. Data downloads use yfinance/Yahoo for personal research; raw quote files are intentionally not redistributed. The HFT repository likewise excludes raw tick captures. No strategy here is presented as live-trading performance or investment advice.
 
 ## What I would test next
 
