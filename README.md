@@ -1,5 +1,7 @@
 # Quant research lab — Prabhav Jatin Patel
 
+**[Open the illustrated research report](https://prabhav-patel.github.io/Quant-Research-Lab/)**
+
 Seven reproducible Python studies and a separate [market-microstructure system](https://github.com/Prabhav-patel/HFT-Microstructure-Lab) document the projects on my résumé. Start with the **[single illustrated report](report.html)** for the question, method, result and limitation of each study. The code and generated figures remain in their numbered folders; no raw market-data dumps or personal files are published.
 
 The résumé dates refer to when I first completed the underlying studies (including earlier Excel/notebook work). These Python implementations and the public presentation were refreshed in **October 2026**; the publication date is not the original study date. Earlier public notebooks remain available in [Black-Scholes](https://github.com/Prabhav-patel/Black-Scholes-Model), [binomial trees](https://github.com/Prabhav-patel/Binomial-Tree-Model), [Monte Carlo](https://github.com/Prabhav-patel/Monte-Carlo-Simulation), and [portfolio risk](https://github.com/Prabhav-patel/Portfolio-Optimization-Risk-Analysis).
