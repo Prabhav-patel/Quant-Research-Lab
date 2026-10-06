@@ -1,12 +1,12 @@
 # Quant research lab — Prabhav Jatin Patel
 
-Seven reproducible Python studies and a separate [market-microstructure system](https://github.com/Prabhav-patel/HFT) document the projects on my résumé. Start with the **[single illustrated report](report.html)** for the question, method, result and limitation of each study. The code and generated figures remain in their numbered folders; no raw market-data dumps or personal files are published.
+Seven reproducible Python studies and a separate [market-microstructure system](https://github.com/Prabhav-patel/HFT-Microstructure-Lab) document the projects on my résumé. Start with the **[single illustrated report](report.html)** for the question, method, result and limitation of each study. The code and generated figures remain in their numbered folders; no raw market-data dumps or personal files are published.
 
 The résumé dates refer to when I first completed the underlying studies (including earlier Excel/notebook work). These Python implementations and the public presentation were refreshed in **October 2026**; the publication date is not the original study date. Earlier public notebooks remain available in [Black-Scholes](https://github.com/Prabhav-patel/Black-Scholes-Model), [binomial trees](https://github.com/Prabhav-patel/Binomial-Tree-Model), [Monte Carlo](https://github.com/Prabhav-patel/Monte-Carlo-Simulation), and [portfolio risk](https://github.com/Prabhav-patel/Portfolio-Optimization-Risk-Analysis).
 
 | Original study | Research question | Reproducible implementation | Current finding |
 |---|---|---|---|
-| Ongoing | Can a sequenced order book feed features into paper trading? | [HFT source](https://github.com/Prabhav-patel/HFT) | Book tests pass; trading edge and full-stack latency not established. |
+| Ongoing | Can a sequenced order book feed features into paper trading? | [HFT source](https://github.com/Prabhav-patel/HFT-Microstructure-Lab) | Book tests pass; trading edge and full-stack latency not established. |
 | Jan 2026 | How sensitive are NIFTY option prices to volatility assumptions? | [02 · volatility](02_StochVol_MonteCarlo_NIFTY/main.py) | GARCH and fixed-volatility scenarios differ materially; this is not an arbitrage claim. |
 | May 2025 | Does a two-bank portfolio diversify risk? | [03 · portfolio](03_Portfolio_Risk_JPM_MS/main.py) | JPM–MS return correlation is 0.74 in the refreshed window. |
 | Mar 2025 | Does a rolling VaR model calibrate out of sample? | [04 · tail risk](04_VaR_ExpectedShortfall/main.py) | Kupiec p = 0.008: reject the 99% model over the full test window. |
