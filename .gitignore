@@ -1,0 +1,12 @@
+01_HFT_OrderBook_Microstructure/
+index.html
+Quant_Resume.pdf
+0*/report.html
+data/
+.yfinance-cache/
+__pycache__/
+*.pyc
+.venv/
+.env
+.env.*
+*.log

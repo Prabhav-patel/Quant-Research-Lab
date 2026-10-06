@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Quant research lab · Prabhav Jatin Patel</title>
+  <style>
+    :root { --ink:#142238; --muted:#52627a; --line:#dce4ef; --blue:#254dd4; --soft:#f3f6fc; --green:#16715c; --red:#a63b42; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:#fff; font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    a { color:var(--blue); text-underline-offset:3px; }
+    a:focus-visible { outline:3px solid #ffad3b; outline-offset:3px; }
+    .wrap { max-width:1080px; padding:0 24px; margin:auto; }
+    header { background:linear-gradient(140deg,#101e39,#203c7a); color:white; padding:64px 0 48px; }
+    header a { color:#d3e3ff; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.16em; font-size:.75rem; font-weight:750; color:#bcd4ff; }
+    h1 { font-size:clamp(2.25rem,5vw,4.25rem); line-height:1.08; letter-spacing:-.04em; margin:.25em 0; }
+    h2 { font-size:1.8rem; letter-spacing:-.025em; margin:0 0 12px; }
+    h3 { font-size:1.3rem; margin:0 0 10px; }
+    p { margin:0 0 15px; }
+    .lead { max-width:780px; font-size:1.13rem; color:#e1e9fa; }
+    .meta { display:flex; flex-wrap:wrap; gap:10px; margin-top:26px; }
+    .pill { border:1px solid #7896d3; border-radius:999px; padding:6px 12px; font-size:.85rem; }
+    nav { border-bottom:1px solid var(--line); background:white; position:sticky; top:0; z-index:1; }
+    nav .wrap { display:flex; flex-wrap:wrap; gap:18px; padding-top:12px; padding-bottom:12px; font-size:.89rem; font-weight:650; }
+    main { padding:40px 0 70px; }
+    .intro { display:grid; grid-template-columns:1.5fr 1fr; gap:26px; margin-bottom:42px; }
+    .panel { background:var(--soft); border:1px solid var(--line); border-radius:16px; padding:22px; }
+    .note { border-left:4px solid var(--blue); padding:12px 17px; background:var(--soft); margin:16px 0; color:var(--muted); }
+    .section-title { border-top:1px solid var(--line); padding-top:36px; margin:42px 0 20px; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+    article { border:1px solid var(--line); border-radius:16px; overflow:hidden; background:#fff; display:flex; flex-direction:column; }
+    article .body { padding:21px; flex:1; }
+    .tag { color:var(--blue); font-size:.78rem; text-transform:uppercase; letter-spacing:.09em; font-weight:800; }
+    .stat { font-size:1.13rem; font-weight:780; margin:10px 0; }
+    .caution { color:var(--red); }
+    .evidence { color:var(--green); }
+    .figure { border-top:1px solid var(--line); background:#f8faff; }
+    .figure img { display:block; width:100%; height:auto; }
+    .figure figcaption { padding:8px 16px 14px; font-size:.81rem; color:var(--muted); }
+    .links { display:flex; flex-wrap:wrap; gap:13px; margin-top:14px; font-size:.9rem; }
+    .method { color:var(--muted); }
+    .bottom { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    ul { margin:8px 0 0; padding-left:21px; }
+    li { margin:6px 0; }
+    footer { background:#101e39; color:#d8e2f3; padding:28px 0; font-size:.85rem; }
+    @media(max-width:760px) { header { padding:46px 0 34px; } .intro,.grid,.bottom { grid-template-columns:1fr; } nav { position:static; } }
+    @media print { nav { position:static; } article { break-inside:avoid; } header { print-color-adjust:exact; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="eyebrow">Prabhav Jatin Patel · Research portfolio</div>
+      <h1>Quant research lab</h1>
+      <p class="lead">Eight practical studies spanning market microstructure, risk, derivatives, rates and forecasting. Each starts with a testable question; the negative results and model limits are part of the work.</p>
+      <div class="meta"><span class="pill">Original studies: 2024–ongoing</span><span class="pill">Reproducible refresh: 6 Oct 2026</span><span class="pill">Research, not live trading</span></div>
+    </div>
+  </header>
+  <nav aria-label="Report sections"><div class="wrap"><a href="#approach">Approach</a><a href="#systems">Systems</a><a href="#risk">Portfolio &amp; risk</a><a href="#pricing">Pricing &amp; rates</a><a href="#forecasting">Forecasting</a><a href="#next">Next experiments</a></div></nav>
+  <main class="wrap">
+    <section class="intro" id="approach">
+      <div>
+        <h2>What this portfolio shows</h2>
+        <p>The goal is to connect classroom models to actual market-data handling, numerical cross-checks, out-of-sample evaluation and implementation constraints. The <a href="README.md">README</a> links the code and explains how to reproduce each run.</p>
+        <p>Dates beside projects refer to the original studies, as confirmed by the author. The Python implementations and displayed figures were assembled or refreshed later. All displayed market results are snapshots as of <strong>6 October 2026</strong>, not live quotes.</p>
+      </div>
+      <aside class="panel" aria-label="Evidence standard">
+        <h3>Evidence standard</h3>
+        <ul>
+          <li>Show the source and observation window.</li>
+          <li>Separate model output from realised performance.</li>
+          <li>Compare against an independent formula or simple baseline.</li>
+          <li>State failed tests and unverified components plainly.</li>
+        </ul>
+      </aside>
+    </section>
+    <div class="note">Public code excludes raw Yahoo quote files and captured exchange ticks. Figures are derived research outputs. Re-running the scripts fetches current prices and can change the results.</div>
+
+    <h2 class="section-title" id="systems">01 · Market-data systems</h2>
+    <div class="grid">
+      <article>
+        <div class="body">
+          <div class="tag">Ongoing · C++ / Python / Node / React</div>
+          <h3>Order book and paper-trading pipeline</h3>
+          <p><strong>Question:</strong> Can a sequenced BTC/USDT depth stream support a local book, interpretable features and a repeatable paper-trading replay?</p>
+          <p class="method"><strong>Build:</strong> Python WebSocket feeder → C++ snapshot/incremental book with gap detection → 13 exploratory features → Node replay/paper trader → local dashboard.</p>
+          <p class="stat evidence">Four order-book tests passed.</p>
+          <p class="method"><strong>Boundary:</strong> No verified end-to-end latency benchmark, live execution, or profitable alpha. This machine's GCC 6.3 is too old to compile the full JSON-based engine; the full-stack build is not verified here.</p>
+          <div class="links"><a href="https://github.com/Prabhav-patel/HFT">Curated HFT source</a></div>
+        </div>
+      </article>
+      <article>
+        <div class="body">
+          <div class="tag">How to read the results</div>
+          <h3>Research is not a backtest screenshot</h3>
+          <p>Market-data studies need explicit sequencing, missing-event checks, non-overlapping prediction horizons, fees, spread, slippage and a genuinely held-out period. A local paper-trading simulator is a useful systems test; it cannot establish execution quality.</p>
+          <p class="method">The next HFT experiment would measure signal lift by horizon and day, then test whether it survives a conservative fill model. That study is proposed, not completed.</p>
+        </div>
+      </article>
+    </div>
+
+    <h2 class="section-title" id="risk">02 · Portfolio and risk</h2>
+    <div class="grid">
+      <article>
+        <div class="body">
+          <div class="tag">May 2025 · JPM / MS</div>
+          <h3>Does a two-bank portfolio diversify?</h3>
+          <p><strong>Method:</strong> adjusted JPM and MS prices, an illustrative 50/50 daily-rebalanced return series, Sharpe, Sortino, drawdown and correlation over roughly six years.</p>
+          <p class="stat">Correlation 0.74 · portfolio volatility 25.01%</p>
+          <p class="method">The pair offers limited sector diversification. The reported 28.50% historical CAGR and 0.98 Sharpe are sample outcomes, not forecasts; assumptions include a 3.68% mean short-rate proxy and zero trading costs.</p>
+          <div class="links"><a href="03_Portfolio_Risk_JPM_MS/main.py">Code</a><a href="https://github.com/Prabhav-patel/Portfolio-Optimization-Risk-Analysis">Earlier notebook</a></div>
+        </div>
+        <figure class="figure"><img src="03_Portfolio_Risk_JPM_MS/outputs/drawdown.png" alt="Historical drawdown comparison for JPM, MS and equal-weight portfolio" loading="lazy"><figcaption>Historical drawdown makes the concentration risk visible.</figcaption></figure>
+      </article>
+      <article>
+        <div class="body">
+          <div class="tag">Mar 2025 · VaR / ES / backtesting</div>
+          <h3>Does 99% VaR actually cover the losses?</h3>
+          <p><strong>Method:</strong> an equal-weight JPM/MS/AAPL illustrative portfolio; historical, Gaussian and Monte Carlo VaR/ES; rolling 252-day historical VaR evaluated only on subsequent observations.</p>
+          <p class="stat caution">23 exceptions / 1,254 days · Kupiec p = 0.008</p>
+          <p class="method">About 12.5 breaches were expected; the full-period calibration test rejects at 5%. The last-250-day traffic light is green (0 breaches), but that is a different window and does not override the rejection. A static historical window can miss changing volatility.</p>
+          <div class="links"><a href="04_VaR_ExpectedShortfall/main.py">Code</a></div>
+        </div>
+        <figure class="figure"><img src="04_VaR_ExpectedShortfall/outputs/backtest.png" alt="Rolling VaR against subsequent portfolio losses, with exception days highlighted" loading="lazy"><figcaption>Out-of-sample breaches, not an in-sample fit score.</figcaption></figure>
+      </article>
+    </div>
+
+    <h2 class="section-title" id="pricing">03 · Derivatives and rates</h2>
+    <div class="grid">
+      <article>
+        <div class="body">
+          <div class="tag">Jan 2026 · NIFTY volatility</div>
+          <h3>What changes when volatility clusters?</h3>
+          <p><strong>Method:</strong> constant, 21-day rolling and fitted GARCH(1,1) volatility scenarios drive matched Monte Carlo option payoffs; the constant-volatility run is cross-checked against Black–Scholes.</p>
+          <p class="stat">ATM: constant 506 · rolling 352 · GARCH 412</p>
+          <p class="method">These are scenario prices in index points with an assumed 6.5% INR risk-free rate, not observed option premiums. GARCH is fitted to historical returns under the physical measure; using it in risk-neutral pricing is an educational approximation, not a calibrated tradable smile.</p>
+          <div class="links"><a href="02_StochVol_MonteCarlo_NIFTY/main.py">Code</a></div>
+        </div>
+        <figure class="figure"><img src="02_StochVol_MonteCarlo_NIFTY/outputs/vol_methods.png" alt="Comparison of constant, rolling and conditional volatility estimates" loading="lazy"><figcaption>Volatility-model choice materially changes the illustrative price.</figcaption></figure>
+      </article>
+      <article>
+        <div class="body">
+          <div class="tag">Jan 2025 · Vasicek / CIR</div>
+          <h3>How do mean-reverting rates behave near zero?</h3>
+          <p><strong>Method:</strong> estimate Vasicek and CIR parameters from a four-year series of the US 13-week Treasury-bill yield proxy (^IRX), then compare simulated paths and model-implied curves.</p>
+          <p class="stat">Illustrative low-rate case: Vasicek 79.4% negative paths; CIR 0%</p>
+          <p class="method">That low-rate experiment is synthetic. ^IRX is a quoted short-yield proxy, not the instantaneous short rate; estimated parameters should not be read as market-implied curve calibration.</p>
+          <div class="links"><a href="05_Vasicek_CIR_RateModels/main.py">Code</a></div>
+        </div>
+        <figure class="figure"><img src="05_Vasicek_CIR_RateModels/outputs/paths.png" alt="Simulated Vasicek and CIR interest-rate paths" loading="lazy"><figcaption>Same mean-reversion question, different boundary behavior.</figcaption></figure>
+      </article>
+      <article>
+        <div class="body">
+          <div class="tag">Oct 2024 · path-dependent Monte Carlo</div>
+          <h3>Can simulation be cross-checked?</h3>
+          <p><strong>Method:</strong> simulate AAPL-based GBM paths for European, arithmetic/geometric Asian and up-and-in/out barrier calls; compare known analytical prices and barrier parity.</p>
+          <p class="stat">European MC 39.275 vs BS 39.310 · Asian SE 0.1340 → 0.0045</p>
+          <p class="method">The control variate reduces estimated standard error by about 30× in this run. AAPL spot/volatility inform the illustration; no observed option-chain quotes or market calibration are used.</p>
+          <div class="links"><a href="06_MonteCarlo_European_Asian_Barrier/main.py">Code</a><a href="https://github.com/Prabhav-patel/Monte-Carlo-Simulation">Earlier notebooks</a></div>
+        </div>
+        <figure class="figure"><img src="06_MonteCarlo_European_Asian_Barrier/outputs/variance_reduction.png" alt="Monte Carlo standard-error comparison with variance reduction" loading="lazy"><figcaption>Variance reduction improves precision without asserting market accuracy.</figcaption></figure>
+      </article>
+      <article>
+        <div class="body">
+          <div class="tag">May 2024 · pricing-method comparison</div>
+          <h3>Do three European-call pricers agree?</h3>
+          <p><strong>Method:</strong> Black–Scholes formula, a convergent binomial tree and Monte Carlo simulation using the same illustrative AAPL inputs, strike and maturity.</p>
+          <p class="stat">Call: BS 39.309 · tree 39.304 · MC 39.249 ± 0.095</p>
+          <p class="method">Agreement checks the implementation under shared assumptions; it does not show the theoretical price equals a live market quote. American early exercise is a separate lattice capability.</p>
+          <div class="links"><a href="08_OptionPricing_BS_Binomial_MC/main.py">Code</a><a href="https://github.com/Prabhav-patel/Black-Scholes-Model">Earlier BS notebook</a><a href="https://github.com/Prabhav-patel/Binomial-Tree-Model">Earlier tree notebook</a></div>
+        </div>
+        <figure class="figure"><img src="08_OptionPricing_BS_Binomial_MC/outputs/binomial_convergence.png" alt="Binomial call-price convergence towards Black-Scholes value" loading="lazy"><figcaption>Numerical convergence is an implementation check.</figcaption></figure>
+      </article>
+    </div>
+
+    <h2 class="section-title" id="forecasting">04 · Time series</h2>
+    <div class="grid">
+      <article>
+        <div class="body">
+          <div class="tag">Sep 2024 · NIFTY ARIMA</div>
+          <h3>Does ARIMA improve a simple forecast?</h3>
+          <p><strong>Method:</strong> ADF checks on log prices and returns; a small ARIMA order grid selected on training data by AIC; residual diagnostics; 30-session held-out comparison with a random-walk forecast.</p>
+          <p class="stat caution">RMSE: ARIMA 966.2 vs random walk 960.5</p>
+          <p class="method">ARIMA(1,1,1) does not beat the baseline on this holdout. Ljung–Box p = 0.871 means no residual autocorrelation was detected at lag 10; it does not prove forecast value or white noise.</p>
+          <div class="links"><a href="07_ARIMA_TimeSeries/main.py">Code</a></div>
+        </div>
+        <figure class="figure"><img src="07_ARIMA_TimeSeries/outputs/forecast.png" alt="NIFTY held-out ARIMA forecast and observed prices" loading="lazy"><figcaption>A negative benchmark result is still a useful research result.</figcaption></figure>
+      </article>
+    </div>
+
+    <h2 class="section-title" id="next">Next experiments</h2>
+    <div class="bottom">
+      <div class="panel"><h3>Stronger risk calibration</h3><p>Compare rolling historical VaR against volatility-aware and filtered-historical alternatives using the same walk-forward observations. Report exception independence, not only exception frequency. Count any tuning against the test period as leakage.</p></div>
+      <div class="panel"><h3>Microstructure without optimistic fills</h3><p>Collect multiple days of sequenced order-book events, define non-overlapping horizons, reserve unseen days, and include spread, fees, slippage and latency sensitivity. Publish confidence intervals and failures alongside any positive signal.</p></div>
+    </div>
+  </main>
+  <footer><div class="wrap">Prabhav Jatin Patel · Derived results as of 6 Oct 2026 · Research and educational use only · <a href="README.md">Code and reproducibility</a></div></footer>
+</body>
+</html>
